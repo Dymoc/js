@@ -8,18 +8,22 @@
 </head>
 
 <body>
-
+    <button onclick="Tmp()">Calculete</button>
     <script>
-        Function Tmp() {
-            if (confirm('Хотите перевести температуру из C в F ?')) {
+        function Tmp() {
+            if (confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'')) {
                 let Tf;
-                let Tc = +prompt('Введите температуру в градусах по Цельсию')
+                let Tc = +prompt('Введите температуру в градусах по Цельсию');
                 Tf = (9 / 5) * Tc + 32;
                 console.log(Tf);
+            } else {
+                let Tс;
+                let Tf = +prompt('Введите температуру в градусах по Фаренгейту');
+                Tc = (Tf - 32) / (9 / 5);
+                console.log(Tc);
             }
         }
     </script>
-    <button onclick="Tmp()">Calculete</button>
 </body>
 
 </html>
