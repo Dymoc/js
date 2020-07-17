@@ -9,6 +9,10 @@
 
 <body>
     <button onclick="Tmp()">Calculete</button>
+    <br><br><br>
+    <button onclick="nameAdm()">Переменные</button>
+    <br><br><br>
+    <button onclick="Con()">Конкатенация</button>
     <script>
         function Tmp() {
             if (confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'')) {
@@ -22,6 +26,20 @@
                 Tc = (Tf - 32) / (9 / 5);
                 console.log(Tc);
             }
+        }
+    </script>
+
+    <script>
+        function nameAdm(){
+            let admin,name = 'Василий';
+            admin = name;
+            console.log(admin);
+        }
+    </script>
+
+    <script>
+        function Con() {
+            console.log(1000 + "108");  //1000108
         }
     </script>
 </body>
