@@ -15,23 +15,21 @@
     <button onclick="Con()">Конкатенация</button>
     <script>
         function Tmp() {
+            let res;
             if (confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'')) {
-                let Tf;
-                let Tc = +prompt('Введите температуру в градусах по Цельсию');
-                Tf = (9 / 5) * Tc + 32;
-                console.log(Tf);
+                let Tc = +prompt('Введите температуру в градусах по Цельсию');                
+                    res = (9 / 5) * Tc + 32;
             } else {
-                let Tс;
                 let Tf = +prompt('Введите температуру в градусах по Фаренгейту');
-                Tc = (Tf - 32) / (9 / 5);
-                console.log(Tc);
+                res = (Tf - 32) / (9 / 5);
             }
+            console.log(res);
         }
     </script>
 
     <script>
-        function nameAdm(){
-            let admin,name = 'Василий';
+        function nameAdm() {
+            let admin, name = 'Василий';
             admin = name;
             console.log(admin);
         }
@@ -39,7 +37,7 @@
 
     <script>
         function Con() {
-            console.log(1000 + "108");  //1000108
+            console.log(1000 + "108"); //1000108
         }
     </script>
 </body>
