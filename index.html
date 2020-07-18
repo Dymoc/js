@@ -8,13 +8,14 @@
 </head>
 
 <body>
-    <button onclick="Tmp()">C/F конвектор</button>
+    <button onclick="tmp()">C/F конвектор V_1</button>
+    <button onclick="questionAndAnswerOfTmp()">C/F конвектор V_2</button>
     <br><br><br>
     <button onclick="nameAdm()">Переменные</button>
     <br><br><br>
     <button onclick="Con()">Конкатенация</button>
     <script>
-        function Tmp() {
+        function tmp() {
             let res;
             if (confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'')) {
                 let Tc = +prompt('Введите температуру в градусах по Цельсию');
@@ -24,6 +25,29 @@
                 res = (Tf - 32) / (9 / 5);
             }
             console.log(res);
+        }
+    </script>
+
+    <script>
+        function questionAndAnswerOfTmp() {
+            let answer = confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'');
+            console.log(calcTmp(validTmp(), answer));
+        }
+
+        function validTmp() {
+            do {
+                t = +prompt('Введите температуру');
+            } while (t == '' || isNaN(t));
+            return t;
+        }
+
+        function calcTmp(t, F) {
+            if (F) {
+                res = (9 / 5) * t + 32;
+            } else {
+                res = (t - 32) / (9 / 5);
+            }
+            return res;
         }
     </script>
 
