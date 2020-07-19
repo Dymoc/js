@@ -14,7 +14,10 @@
     <button onclick="nameAdm()">Переменные</button>
     <br><br><br>
     <button onclick="Con()">Конкатенация</button>
-    <script>
+    <br><br><br>
+    <button onclick="wNamber()">Поиск ответа</button>
+    <button onclick="wNamber_2()">Поиск ответа 2</button>
+    <script class="tmp">
         function tmp() {
             let res;
             if (confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'')) {
@@ -28,7 +31,7 @@
         }
     </script>
 
-    <script>
+    <script class="questionAndAnswerOfTmp">
         function questionAndAnswerOfTmp() {
             let answer = confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'');
             console.log(calcTmp(validTmp(), answer));
@@ -51,7 +54,7 @@
         }
     </script>
 
-    <script>
+    <script class="nameAdm">
         function nameAdm() {
             let admin, name = 'Василий';
             admin = name;
@@ -59,9 +62,88 @@
         }
     </script>
 
-    <script>
+    <script class="Con">
         function Con() {
             console.log(1000 + "108"); //1000108
+        }
+    </script>
+
+    <script class="wNamber">
+        // V_1
+        function wNamber() {
+
+            let count;
+
+            do {
+                count = +prompt('Введите число от 0 до 15');
+            } while (0 > count || count > 15 || isNaN(count));
+
+            switch (count) {
+                case 0:
+                    printRes(count);
+                    break;
+                case 1:
+                    printRes(count);
+                    break;
+                case 2:
+                    printRes(count);
+                    break;
+                case 3:
+                    printRes(count);
+                    break;
+                case 4:
+                    printRes(count);
+                    break;
+                case 5:
+                    printRes(count);
+                    break;
+                case 6:
+                    printRes(count);
+                    break;
+                case 7:
+                    printRes(count);
+                    break;
+                case 8:
+                    printRes(count);
+                    break;
+                case 9:
+                    printRes(count);
+                    break;
+                case 10:
+                    printRes(count);
+                    break;
+                case 11:
+                    printRes(count);
+                    break;
+                case 12:
+                    printRes(count);
+                    break;
+                case 13:
+                    printRes(count);
+                    break;
+                case 14:
+                    printRes(count);
+                    break;
+                case 15:
+                    printRes(count);
+                    break;
+            }
+        }
+
+
+        function printRes(count) {
+            for (i = count; i <= 15; i++) {
+                console.log(i);
+            }
+        }
+        // V_2
+        function wNamber_2() {
+            do {
+                count = prompt('Введите число от 0 до 15');
+            } while (0 > count || count > 15 || isNaN(count));
+            for (i = count; i <= 15; i++) {
+                console.log(i);
+            }
         }
     </script>
 </body>
