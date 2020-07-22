@@ -236,39 +236,39 @@
 
             switch (val) {
                 case 0:
-                    computer = 'КАМЕНЬ';
+                    computer = ', компютер выкинул КАМЕНЬ';
                     break;
                 case 1:
-                    computer = 'НОЖНИЦЫ';
+                    computer = ', компютер выкинул НОЖНИЦЫ';
                     break;
                 case 2:
-                    computer = 'БУМАГА';
+                    computer = ', компютер выкинул БУМАГА';
                     break;
             }
 
             if (player == 0) {
                 if (val == 0) {
-                    console.log(`${message1}, компютер выкинул ${computer}`);
+                    console.log(`${message1} ${computer}`);
                 } else if (val == 1) {
-                    console.log(`${message2}, компютер выкинул ${computer}`);
+                    console.log(`${message2} ${computer}`);
                 } else if (val == 2) {
-                    console.log(`${message3}, компютер выкинул ${computer}`);
+                    console.log(`${message3} ${computer}`);
                 }
             } else if (player == 1) {
                 if (val == 0) {
-                    console.log(`${message3}, компютер выкинул ${computer}`);
+                    console.log(`${message3} ${computer}`);
                 } else if (val == 1) {
-                    console.log(`${message1}, компютер выкинул ${computer}`);
+                    console.log(`${message1} ${computer}`);
                 } else if (val == 2) {
-                    console.log(`${message2}, компютер выкинул ${computer}`);
+                    console.log(`${message2} ${computer}`);
                 }
-            }else {
+            } else {
                 if (val == 0) {
-                    console.log(`${message2}, компютер выкинул ${computer}`);
+                    console.log(`${message2} ${computer}`);
                 } else if (val == 1) {
-                    console.log(`${message3}, компютер выкинул ${computer}`);
+                    console.log(`${message3} ${computer}`);
                 } else if (val == 2) {
-                    console.log(`${message1}, компютер выкинул ${computer}`);
+                    console.log(`${message1} ${computer}`);
                 }
             }
         }
