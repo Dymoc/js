@@ -228,13 +228,13 @@
     </script>
 
     <script class="play">
-        function play(player) {
-            let val = randomChoice();
+        function play(playerChoice) {
+            let compChoice = randomChoice();
             let message1 = ('Ничья');
             let message2 = ('Вы выиграли');
             let message3 = ('Вы проиграли');
 
-            switch (val) {
+            switch (compChoice) {
                 case 0:
                     computer = ', компютер выкинул КАМЕНЬ';
                     break;
@@ -246,28 +246,28 @@
                     break;
             }
 
-            if (player == 0) {
-                if (val == 0) {
+            if (playerChoice == 0) {
+                if (compChoice == 0) {
                     console.log(`${message1} ${computer}`);
-                } else if (val == 1) {
+                } else if (compChoice == 1) {
                     console.log(`${message2} ${computer}`);
-                } else if (val == 2) {
+                } else if (compChoice == 2) {
                     console.log(`${message3} ${computer}`);
                 }
-            } else if (player == 1) {
-                if (val == 0) {
+            } else if (playerChoice == 1) {
+                if (compChoice == 0) {
                     console.log(`${message3} ${computer}`);
-                } else if (val == 1) {
+                } else if (compChoice == 1) {
                     console.log(`${message1} ${computer}`);
-                } else if (val == 2) {
+                } else if (compChoice == 2) {
                     console.log(`${message2} ${computer}`);
                 }
             } else {
-                if (val == 0) {
+                if (compChoice == 0) {
                     console.log(`${message2} ${computer}`);
-                } else if (val == 1) {
+                } else if (compChoice == 1) {
                     console.log(`${message3} ${computer}`);
-                } else if (val == 2) {
+                } else if (compChoice == 2) {
                     console.log(`${message1} ${computer}`);
                 }
             }
