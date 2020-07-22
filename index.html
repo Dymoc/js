@@ -8,16 +8,16 @@
 </head>
 
 <body>
-    <button onclick="tmp()">C/F конвектор V_1</button>
+    <!-- <button onclick="tmp()">C/F конвектор V_1</button>
     <button onclick="questionAndAnswerOfTmp()">C/F конвектор V_2</button>
     <br><br><br>
     <button onclick="nameAdm()">Переменные</button>
     <br><br><br>
     <button onclick="Con()">Конкатенация</button>
-    <br><br><br>
+    <br><br><br> -->
     <button onclick="wNamber()">Поиск ответа</button>
     <button onclick="wNamber_2()">Поиск ответа 2</button>
-    <script class="tmp">
+    <!-- <script class="tmp">
         function tmp() {
             let res;
             if (confirm('Хотите перевести температуру из C в F нажмите \'OK\', если наоборот то \'Cancel\'')) {
@@ -66,7 +66,7 @@
         function Con() {
             console.log(1000 + "108"); //1000108
         }
-    </script>
+    </script> -->
 
     <script class="wNamber">
         // V_1
@@ -75,74 +75,56 @@
             let count;
 
             do {
-                count = +prompt('Введите число от 0 до 15');
-            } while (0 > count || count > 15 || isNaN(count));
+                count = prompt('Введите число от 0 до 15');
+            } while (0 > count || count > 15 || isNaN(count) || count === '');
 
             switch (count) {
-                case 0:
-                    printRes(count);
-                    break;
-                case 1:
-                    printRes(count);
-                    break;
-                case 2:
-                    printRes(count);
-                    break;
-                case 3:
-                    printRes(count);
-                    break;
-                case 4:
-                    printRes(count);
-                    break;
-                case 5:
-                    printRes(count);
-                    break;
-                case 6:
-                    printRes(count);
-                    break;
-                case 7:
-                    printRes(count);
-                    break;
-                case 8:
-                    printRes(count);
-                    break;
-                case 9:
-                    printRes(count);
-                    break;
-                case 10:
-                    printRes(count);
-                    break;
-                case 11:
-                    printRes(count);
-                    break;
-                case 12:
-                    printRes(count);
-                    break;
-                case 13:
-                    printRes(count);
-                    break;
-                case 14:
-                    printRes(count);
-                    break;
-                case 15:
-                    printRes(count);
-                    break;
+                case '0':
+                    console.log('0');
+                case '1':
+                    console.log('1');
+                case '2':
+                    console.log('2');
+                case '3':
+                    console.log('3');
+                case '4':
+                    console.log('4');
+                case '5':
+                    console.log('5');
+                case '6':
+                    console.log('6');
+                case '7':
+                    console.log('7');
+                case '8':
+                    console.log('8');
+                case '9':
+                    console.log('9');
+                case '10':
+                    console.log('10');
+                case '11':
+                    console.log('11');
+                case '12':
+                    console.log('12');
+                case '13':
+                    console.log('13');
+                case '14':
+                    console.log('14');
+                case '15':
+                    console.log('15');
             }
         }
 
 
-        function printRes(count) {
-            for (i = count; i <= 15; i++) {
-                console.log(i);
-            }
-        }
         // V_2
         function wNamber_2() {
             do {
                 count = prompt('Введите число от 0 до 15');
-            } while (0 > count || count > 15 || isNaN(count));
-            for (i = count; i <= 15; i++) {
-                console.log(i);
+            } while (0 > count || count > 15 || isNaN(count) || count === '');
+
+            if (count != null) {
+                for (i = count; i <= 15; i++) {
+                    console.log(i);
+                }
             }
         }
     </script>
