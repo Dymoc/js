@@ -17,6 +17,19 @@
     <br><br><br> -->
     <button onclick="wNamber()">Поиск ответа</button>
     <button onclick="wNamber_2()">Поиск ответа 2</button>
+    <br><br><br>
+    <button onclick="calculate()">Считаем?</button>
+    <br><br><br>
+    <button onclick="calc('+')">Плюс</button>
+    <button onclick="calc('-')">Минус</button>
+    <button onclick="calc('*')">Умножить</button>
+    <button onclick="calc('/')">Делить</button>
+    <br><br><br>
+    <button onclick="power()">Рекурсия</button>
+    <br><br><br>
+    <button onclick="play(0)">Камень</button>
+    <button onclick="play(1)">Ножницы</button>
+    <button onclick="play(2)">Бумага</button>
     <!-- <script class="tmp">
         function tmp() {
             let res;
@@ -69,16 +82,16 @@
     </script> -->
 
     <script class="wNamber">
-        // V_1
+        // V_1          В варианте str
         function wNamber() {
 
-            let count;
+            let str;
 
             do {
-                count = prompt('Введите число от 0 до 15');
-            } while (0 > count || count > 15 || isNaN(count) || count === '');
+                str = prompt('Введите число от 0 до 15');
+            } while (0 > str || str > 15 || isNaN(str) || str === '');
 
-            switch (count) {
+            switch (str) {
                 case '0':
                     console.log('0');
                 case '1':
@@ -115,27 +128,79 @@
         }
 
 
-        // V_2
+        // V_2          В варианте num
         function wNamber_2() {
             do {
-                count = prompt('Введите число от 0 до 15');
-            } while (0 > count || count > 15 || isNaN(count) || count === '');
+                num = prompt('Введите число от 0 до 15');
+            } while (0 > num || num > 15 || isNaN(num) || num === '');
 
-            if (count != null) {
-                for (i = count; i <= 15; i++) {
+            if (num != null) {
+                for (i = num; i <= 15; i++) {
                     console.log(i);
                 }
             }
         }
     </script>
 
-    <script>
+    <script class="calc">
+        // V_1  через switch
+        function calculate() {
+            let operation
+            do {
+                operation = prompt(
+                    'Какую операцию будем выполнять? \n \'+\' - сложение \n \'-\' - минус \'*\' - умножение \n \'/\' - деление'
+                );
+            } while (operation != '+' && operation != '-' && operation != '*' && operation != '/');
+            a = +prompt('Введите число a');
+            b = +prompt('Введите число b');
+            console.log(resultat(a, b, operation));
+        }
+
+        function resultat(a, b, operation) {
+            let res;
+            switch (operation) {
+                case ('+'):
+                    res = plus(a, b);
+                    break;
+                case ('-'):
+                    res = minus(a, b);
+                    break;
+                case ('*'):
+                    res = multiply(a, b);
+                    break;
+                case ('/'):
+                    res = share(a, b);
+                    break;
+            }
+            return res;
+        }
+
+        // V_2  через if, тоже не очень нравится switch))))
+        function calc(operation) {
+            a = +prompt('Введите число a');
+            b = +prompt('Введите число b');
+            let res = result(a, b, operation);
+            console.log(res);
+        }
+
+        function result(a, b, operation) {
+            if (operation == '+') {
+                return plus(a, b);
+            } else if (operation == '-') {
+                return minus(a, b);
+            } else if (operation == '*') {
+                return multiply(a, b);
+            } else if (operation == '/') {
+                return share(a, b);
+            }
+        }
+        // операции для калькулятора
         function plus(a, b) {
-            return a + b;
+            return (a + b);
         }
 
         function minus(a, b) {
-            return a + b;
+            return a - b;
         }
 
         function multiply(a, b) {
@@ -143,9 +208,76 @@
         }
 
         function share(a, b) {
-            return a / b;
+            if (b == 0) {
+                console.log('Делить на ноль нельзя');
+                return 0;
+            } else {
+                return a / b;
+            }
         }
     </script>
+
+    <script class="recursia">
+        function power(val, pow) {
+            if (pow == 1) {
+                return val;
+            } else {
+                return val * power(val, pow - 1);
+            }
+        }
+    </script>
+
+    <script>
+        function play(player) {
+            let val = randomChoice();
+            let message1 = ('Ничья');
+            let message2 = ('Вы выиграли');
+            let message3 = ('Вы проиграли');
+
+            switch (val) {
+                case 0:
+                    computer = 'КАМЕНЬ';
+                    break;
+                case 1:
+                    computer = 'НОЖНИЦЫ';
+                    break;
+                case 2:
+                    computer = 'БУМАГА';
+                    break;
+            }
+
+            if (player == 0) {
+                if (val == 0) {
+                    console.log(`${message1}, компютер выкинул ${computer}`);
+                } else if (val == 1) {
+                    console.log(`${message2}, компютер выкинул ${computer}`);
+                } else if (val == 2) {
+                    console.log(`${message3}, компютер выкинул ${computer}`);
+                }
+            } else if (player == 1) {
+                if (val == 0) {
+                    console.log(`${message3}, компютер выкинул ${computer}`);
+                } else if (val == 1) {
+                    console.log(`${message1}, компютер выкинул ${computer}`);
+                } else if (val == 2) {
+                    console.log(`${message2}, компютер выкинул ${computer}`);
+                }
+            }else {
+                if (val == 0) {
+                    console.log(`${message2}, компютер выкинул ${computer}`);
+                } else if (val == 1) {
+                    console.log(`${message3}, компютер выкинул ${computer}`);
+                } else if (val == 2) {
+                    console.log(`${message1}, компютер выкинул ${computer}`);
+                }
+            }
+        }
+
+        function randomChoice() {
+            return parseInt(Math.random() * 3);
+        }
+    </script>
+
 </body>
 
 </html>
