@@ -32,7 +32,7 @@
     <button onclick="play(1)">Ножницы</button>
     <button onclick="play(2)">Бумага</button>
     <br><br>
-    <div id="text">ТУТ БУДЕТ РЕЗУЛЬТАТ!!!</div>
+    <div id="text">КТО ВЫИГРАЕТ!?</div>
     <br>
     <div> СЧЕТ </div>
     <br>
@@ -294,6 +294,7 @@
         function clearResult() {
             playerScore.innerHTML = 0;
             compScore.innerHTML = 0;
+            text.innerHTML =  'КТО ВЫИГРАЕТ!?';
         }
 
         function winer(message2) {
