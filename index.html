@@ -297,20 +297,20 @@
             text.innerHTML =  'КТО ВЫИГРАЕТ!?';
         }
 
-        function winer(message2) {
-            console.log(`${message2} ${computer}`);
+        function winer(message) {
+            console.log(`${message} ${computer}`);
             text.innerHTML = 'Вы выиграли';
             playerScore.innerHTML = (Number(playerScore.textContent) + 1);
         }
 
-        function luser(message3) {
-            console.log(`${message3} ${computer}`);
+        function luser(message) {
+            console.log(`${message} ${computer}`);
             text.innerHTML = 'Вы проиграли';
             compScore.innerHTML = Number((compScore.textContent)) + 1;
         }
 
-        function draw(message1) {
-            console.log(`${message1} ${computer}`);
+        function draw(message) {
+            console.log(`${message} ${computer}`);
             text.innerHTML = 'Ничья';
         }
     </script>
