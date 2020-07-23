@@ -241,46 +241,36 @@
     <script class="play">
         function play(playerChoice) {
             let compChoice = randomChoice();
-            let message = ['Ничья','Вы выиграли','Вы проиграли'];            
+            let message = ['Ничья', 'Вы выиграли', 'Вы проиграли'];
             let text = document.getElementById('text');
             let playerScore = document.getElementById('playerScore');
             let compScore = document.getElementById('compScore');
+            let computer = [', компютер выкинул КАМЕНЬ', ', компютер выкинул НОЖНИЦЫ', ', компютер выкинул БУМАГА']
 
-            switch (compChoice) {
-                case 0:
-                    computer = ', компютер выкинул КАМЕНЬ';
-                    break;
-                case 1:
-                    computer = ', компютер выкинул НОЖНИЦЫ';
-                    break;
-                case 2:
-                    computer = ', компютер выкинул БУМАГА';
-                    break;
-            }
 
             if (playerChoice == 0) {
                 if (compChoice == 0) {
-                    draw(message[0]);
+                    draw(message[0], computer[compChoice]);
                 } else if (compChoice == 1) {
-                    winer(message[1]);
+                    winer(message[1], computer[compChoice]);
                 } else if (compChoice == 2) {
-                    luser(message[2]);
+                    luser(message[2], computer[compChoice]);
                 }
             } else if (playerChoice == 1) {
                 if (compChoice == 0) {
-                    luser(message[2]);
+                    luser(message[2], computer[compChoice]);
                 } else if (compChoice == 1) {
-                    draw(message[0]);
+                    draw(message[0], computer[compChoice]);
                 } else if (compChoice == 2) {
-                    winer(message[1]);
+                    winer(message[1], computer[compChoice]);
                 }
             } else {
                 if (compChoice == 0) {
-                    winer(message[1]);
+                    winer(message[1], computer[compChoice]);
                 } else if (compChoice == 1) {
-                    luser(message[2]);
+                    luser(message[2], computer[compChoice]);
                 } else if (compChoice == 2) {
-                    draw(message[0]);
+                    draw(message[0], computer[compChoice]);
                 }
             }
         }
@@ -292,24 +282,24 @@
         function clearResult() {
             playerScore.innerHTML = 0;
             compScore.innerHTML = 0;
-            text.innerHTML =  'КТО ВЫИГРАЕТ!?';
+            text.innerHTML = 'КТО ВЫИГРАЕТ!?';
         }
 
-        function winer(message) {
-            console.log(`${message} ${computer}`);
-            text.innerHTML = 'Вы выиграли';
+        function winer(message, compChoice) {
+            console.log(`${message} ${compChoice}`);
+            text.innerHTML = message;
             playerScore.innerHTML = (Number(playerScore.textContent) + 1);
         }
 
-        function luser(message) {
-            console.log(`${message} ${computer}`);
-            text.innerHTML = 'Вы проиграли';
+        function luser(message, compChoice) {
+            console.log(`${message} ${compChoice}`);
+            text.innerHTML = message;
             compScore.innerHTML = Number((compScore.textContent)) + 1;
         }
 
-        function draw(message) {
-            console.log(`${message} ${computer}`);
-            text.innerHTML = 'Ничья';
+        function draw(message, compChoice) {
+            console.log(`${message} ${compChoice}`);
+            text.innerHTML = message;
         }
     </script>
 
