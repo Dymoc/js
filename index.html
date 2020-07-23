@@ -240,12 +240,12 @@
 
     <script class="play">
         function play(playerChoice) {
-            let compChoice = randomChoice();
-            let message = ['Ничья', 'Вы выиграли', 'Вы проиграли'];
-            let text = document.getElementById('text');
-            let playerScore = document.getElementById('playerScore');
-            let compScore = document.getElementById('compScore');
-            let computer = [', компютер выкинул КАМЕНЬ', ', компютер выкинул НОЖНИЦЫ', ', компютер выкинул БУМАГА']
+            let compChoice = randomChoice(),
+                message = ['Ничья', 'Вы выиграли', 'Вы проиграли'],
+                text = document.getElementById('text'),
+                playerScore = document.getElementById('playerScore'),
+                compScore = document.getElementById('compScore'),
+                computer = [', компютер выкинул КАМЕНЬ', ', компютер выкинул НОЖНИЦЫ', ', компютер выкинул БУМАГА'];
 
 
             if (playerChoice == 0) {
