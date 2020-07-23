@@ -36,7 +36,8 @@
     <br>
     <div> СЧЕТ </div>
     <br>
-    <span> Вы </span><span id="playerScore">0</span><span> : </span><span id="compScore">0</span><span> Компьютер </span>
+    <span> Вы </span><span id="playerScore">0</span><span> : </span><span id="compScore">0</span><span> Компьютер
+    </span>
     <br><br>
     <button onclick="clearResult()">Сбросить результаты</button>
     <hr>
@@ -261,42 +262,27 @@
 
             if (playerChoice == 0) {
                 if (compChoice == 0) {
-                    console.log(`${message1} ${computer}`);
-                    text.innerHTML = 'Ничья';
+                    draw(message1);
                 } else if (compChoice == 1) {
-                    console.log(`${message2} ${computer}`);
-                    text.innerHTML = 'Вы выиграли';
-                    playerScore.innerHTML = (Number(playerScore.textContent) + 1);                    
+                    winer(message2);
                 } else if (compChoice == 2) {
-                    console.log(`${message3} ${computer}`);
-                    text.innerHTML = 'Вы проиграли';
-                    compScore.innerHTML = Number((compScore.textContent)) + 1;
+                    luser(message3);
                 }
             } else if (playerChoice == 1) {
                 if (compChoice == 0) {
-                    console.log(`${message3} ${computer}`);
-                    text.innerHTML = 'Вы проиграли';
-                    compScore.innerHTML = Number((compScore.textContent)) + 1;
+                    luser(message3);
                 } else if (compChoice == 1) {
-                    console.log(`${message1} ${computer}`);
-                    text.innerHTML = 'Ничья';
+                    draw(message1);
                 } else if (compChoice == 2) {
-                    console.log(`${message2} ${computer}`);
-                    text.innerHTML = 'Вы выиграли';
-                    playerScore.innerHTML = (Number(playerScore.textContent) + 1);
+                    winer(message2);
                 }
             } else {
                 if (compChoice == 0) {
-                    console.log(`${message2} ${computer}`);
-                    text.innerHTML = 'Вы выиграли';
-                    playerScore.innerHTML = (Number(playerScore.textContent) + 1);
+                    winer(message2);
                 } else if (compChoice == 1) {
-                    console.log(`${message3} ${computer}`);
-                    text.innerHTML = 'Вы проиграли';
-                    compScore.innerHTML = Number((compScore.textContent)) + 1;
+                    luser(message3);
                 } else if (compChoice == 2) {
-                    console.log(`${message1} ${computer}`);
-                    text.innerHTML = 'Ничья';
+                    draw(message1);
                 }
             }
         }
@@ -304,9 +290,27 @@
         function randomChoice() {
             return parseInt(Math.random() * 3);
         }
-        function clearResult(){
+
+        function clearResult() {
             playerScore.innerHTML = 0;
             compScore.innerHTML = 0;
+        }
+
+        function winer(message2) {
+            console.log(`${message2} ${computer}`);
+            text.innerHTML = 'Вы выиграли';
+            playerScore.innerHTML = (Number(playerScore.textContent) + 1);
+        }
+
+        function luser(message3) {
+            console.log(`${message3} ${computer}`);
+            text.innerHTML = 'Вы проиграли';
+            compScore.innerHTML = Number((compScore.textContent)) + 1;
+        }
+
+        function draw(message1) {
+            console.log(`${message1} ${computer}`);
+            text.innerHTML = 'Ничья';
         }
     </script>
 
