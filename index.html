@@ -46,7 +46,6 @@
     <button onclick="piramid()">Piramid</button>
     <button onclick="numberFind()">NumberFind</button>
     <button onclick="bullCow()">BandC</button>
-    <button onclick="random()">BandC</button>
 
     <!-- <script class="tmp">
         function tmp() {
@@ -366,27 +365,20 @@
     </script>
 
     <script>
-        function random() {
-            let number = [];
-            console.log(randomNumBC(number));
-
-        }
 
         function bullCow() {
             let number = [];
-            let answer = [];
 
             randomNumBC(number);
 
-            questionOfNumber(answer);
-
-            validNumber(answer, number);
+            questionOfNumber(number);
         }
 
         function checkResult(number, answer) {
             if (bull(number, answer) < 4) {
                 console.log('Попробуйте еще раз');
-                questionOfNumber();
+                answer.splice(0, 4);
+                questionOfNumber(number);
             }
         }
 
@@ -402,11 +394,12 @@
             }
         }
 
-        function questionOfNumber(answer) {
+        function questionOfNumber(number) {
+            let answer = [];
             for (i = 0; i < 4; i++) {
                 answer[i] = +prompt(`Введите число ${i + 1}`);
             }
-            return answer;
+            validNumber(answer, number);
         }
 
         function output(number, answer) {
@@ -414,26 +407,34 @@
             console.log(answer);
             console.log(cow(number, answer));
             console.log(bull(number, answer));
-
             checkResult(number, answer);
         }
 
+        function reRandom(number, index) {
+            number[index] = randomNum();
+            validArr(number);
+        }
+
         function validArr(number) {
-            number.forEach(function (elNumber) {
-                number.forEach(function (number) {
-                    if (number == elNumber) {
-                        number = Math.floor(Math.random() * 9);
+            number.forEach(function (elNumer, index) {
+                number.forEach(function (el, ind) {
+                    if (el == elNumer && !(index == ind)) {
+                        reRandom(number, index);                        
                     }
                 });
             });
+         }
+
+        function randomNum(number) {
+            num = Math.floor(Math.random() * 9);
+            return num;
         }
 
         function randomNumBC(number) {
-
             while (number.length < 4) {
-                number[number.length] = Math.floor(Math.random() * 9);
-                validArr(number);
+                number[number.length] = randomNum();
             }
+            validArr(number);
             return number;
         }
 
