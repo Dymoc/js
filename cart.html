@@ -34,6 +34,56 @@
             }
         };
     </script>
+
+
+
+    <script>
+        let result = [];
+
+        function decompositionNumber() {
+
+            let number = [...prompt('Введите число от 0 до 999')];
+
+            if (validNumber(number)) {
+                result.push(setHundreds(number));
+                result.push(setHundreds(number));
+
+            }
+
+        }
+
+
+
+
+
+        function validNumber(number) {
+       
+            if (number.length > 3 || number.length === 0) {
+                console.log('To biger');
+            }
+
+            return true;
+
+        }
+
+        function setHundreds(number) {
+            return {
+                hundreds: number,
+            }
+        }
+
+        function setDozens(number) {
+            return {
+                dozens: number,
+            }
+        }
+
+        function setUnits(number) {
+            return {
+                units: number,
+            }
+        }
+    </script>
 </body>
 
 </html>
