@@ -9,28 +9,22 @@
 
 <body>
 
-    
+
     <script>
         let NAMES = ['MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT',
-            'MANGO PEOPLE T-SHIRT',
             'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT',
-            'MANGO PEOPLE T-SHIRT',
-            'MANGO PEOPLE T-SHIRT'
+            'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT',
         ];
         let PRICE = [25, 56, 82, 15, 25, 56, 82, 15, 66];
 
         let catalog = {
-
             items: [],
-
             fillCatalog() {
-
                 for (let i = 0; i < NAMES.length; i++) {
                     this.items.push(newTovar(NAMES[i], PRICE[i]));
                 }
                 return this.items;
             },
-
         };
 
         function newTovar(name, price) {
