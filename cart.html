@@ -41,6 +41,8 @@
 
         myArr = analiz(number);
 
+        delNull(myArr);
+
         console.log(myArr);
 
         function analiz(number) {            
@@ -64,6 +66,14 @@
                 'десятки': doz,
                 'сотни': hun,
             }            
+        }
+
+        function delNull(myArr){
+            for (val in myArr){
+                if (myArr[val] === undefined){
+                    delete myArr[val];
+                }
+            }
         }
     </script>
 </body>
