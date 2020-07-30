@@ -10,7 +10,7 @@
 <body>
 
 
-    <script>
+    <!-- <script>
         let NAMES = ['MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT',
             'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT',
             'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT',
@@ -33,6 +33,38 @@
                 price,
             }
         };
+    </script> -->
+
+    <script>
+        number = [...prompt('число?')].reverse();
+        myArr = [];
+
+        myArr = analiz(number);
+
+        console.log(myArr);
+
+        function analiz(number) {            
+            let units,doz,hun;
+            for (let i = 0; i < number.length; i++) {
+                if (i === 0) {
+                    units = number[i];
+                } else if (i === 1) {
+                    doz = number[i];
+                } else {
+                    hun = number[i];
+                }
+            }
+
+            return getMyObject(units,doz,hun);
+        }
+
+        function getMyObject(units,doz,hun){
+            return {
+                'единицы': units,
+                'десятки': doz,
+                'сотни': hun,
+            }            
+        }
     </script>
 </body>
 
